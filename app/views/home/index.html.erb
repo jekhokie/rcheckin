@@ -1,4 +1,7 @@
-<h3>Home</h3>
-<% @users.each do |user| %>
-  <p>User: <%= link_to user.name, user %> </p>
-<% end %>
+<div id="home-main" class="hero-unit">
+  <h1>Welcome!</h1>
+  <% @users.each do |user| %>
+    <p>User: <%= link_to user.name, user %> </p>
+  <% end %>
+  <%= button_to "Learn more", root_path, { :remote => true, :class => "btn btn-primary btn-large" } %>
+</div>
