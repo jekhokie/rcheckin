@@ -2,7 +2,7 @@
 <html>
 
   <head>
-    <title>Rcheckin</title>
+    <title>RCheckin</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -11,13 +11,20 @@
   <body>
     <%= render "shared/navigation" %>
 
-    <div class="container">
+    <div class="container" id="content">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
       <% end %>
 
       <%= yield %>
     </div>
-  </body>
 
+    <div id="footer-content">
+      <hr class="soften">
+
+      <footer>
+        <p>Built using Ruby, Rails and a whole bunch of Twitter Bootstrap styling.</p>
+      </footer>
+    </div>
+  </body>
 </html>

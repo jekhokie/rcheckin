@@ -1,0 +1,13 @@
+.icon-star.in {
+  color: #46a546;
+}
+
+.icon-star.out {
+  color: #bd362f;
+}
+
+hr.soften {
+  border: 0;
+  height: 2px;
+  background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .5), transparent);
+}

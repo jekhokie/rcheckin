@@ -15,9 +15,9 @@
       <ul class="nav pull-right">
         <li>
           <% if user_signed_in? %>
-            <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
+            <%= link_to 'Logout', destroy_user_session_path, { :remote => true, :method => 'delete'} %>
           <% else %>
-            <%= link_to 'Login', new_user_session_path %>
+            <%= link_to 'Login', new_user_session_path, :remote => true %>
           <% end %>
         </li>
 
@@ -25,9 +25,9 @@
 
         <li>
           <% if user_signed_in? %>
-            <%= link_to 'Edit account', edit_user_registration_path %>
+            <%= link_to 'Edit account', edit_user_registration_path, :remote => true %>
           <% else %>
-            <%= link_to 'Sign up', new_user_registration_path %>
+            <%= link_to 'Sign up', new_user_registration_path, :remote => true %>
           <% end %>
         </li>
       </ul>

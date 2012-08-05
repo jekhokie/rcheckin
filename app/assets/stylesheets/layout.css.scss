@@ -1,0 +1,23 @@
+body {
+  font-family: Helvetica;
+
+  .navbar-inner {
+    .container {
+      width: 940px;
+    }
+  }
+
+  #content {
+    width: 940px;
+  }
+
+  #footer-content {
+    margin: 0px auto;
+    width: 940px;
+
+    p {
+      font-style: italic;
+      text-align: center;
+    }
+  }
+}
