@@ -11,6 +11,7 @@ group :assets do
   gem 'sass'
   gem 'sass-rails'
   gem 'twitter-bootstrap-rails'
+  gem 'font-awesome-rails'
   gem 'therubyracer', :platforms => :ruby
 end
 
