@@ -41,32 +41,49 @@
 
     #image-container {
       background-color: #981A21;
-      border-radius: 25px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
       font-size: 40px;
       font-weight: bold;
       margin-left: 90px;
-      margin-top: 5px;
-      padding: 20px;
-      width: 255px;
+      width: 295px;
+      color: #EEE;
+
+      #quickstat-logo {
+        border-bottom: 2px solid #EEE;
+        font-size: 20px;
+        padding: 5px 0px;
+        margin-bottom: 12px;
+        text-align: center;
+      }
 
       p {
-        color: black;
-        font-weight: bold;
         font-size: 16px;
+        font-weight: bold;
+        line-height: 16px;
+        padding: 0px 20px 0px 20px;
 
         a {
           color: white;
         }
+
+        .current-status {
+          color: #f89406;
+        }
       }
 
-      .btn {
-        font-size: 20px;
-        font-style: none;
-        width: 92px;
-      }
+      #button-container {
+        padding: 0px 20px 20px 20px;
 
-      .btn-inverse {
-        background-color: gray;
+        .btn {
+          font-size: 20px;
+          font-style: none;
+          width: 92px;
+        }
+
+        .btn-inverse {
+          background-color: gray;
+        }
       }
     }
   }
