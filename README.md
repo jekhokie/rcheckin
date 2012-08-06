@@ -35,3 +35,13 @@ Usage
 --------
 
 TODO - will be written once the product matures to the point that it warrants a user-guide.
+
+Credits
+--------
+
+* Thanks to Daniel Kehoe's tutorial on [Rails 3 using Mongoid and Devise](https://github.com/RailsApps/rails3-mongoid-devise) from which many of the Spec and Feature tests are taken
+
+MIT License
+--------
+
+[MIT License](http://www.opensource.org/licenses/mit-license)
