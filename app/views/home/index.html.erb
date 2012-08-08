@@ -8,46 +8,20 @@
       Keeping your team in touch
     </p>
   </div>
-
-  <div id="title-image">
-    <div id="image-container">
-      <div id="quickstat-logo">QuickStat</div>
-      <% if user_signed_in? %>
-        <p>Your current status: <span class="current-status">TODO</span></p>
-      <% else %>
-        <p><%= link_to "Sign in", user_session_path %> for QuickStat capability:</p>
-      <% end %>
-
-      <div id="button-container">
-        <div class="btn btn-success btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">IN</div>
-        <div class="btn btn-danger btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">OUT</div>
-      </div>
-    </div>
-  </div>
 </div>
 
-<div id="home-info">
-  <div class="row">
-    <div class="span4 info-content">
-      <h3>
-        <i class="icon-search icon-large"></i>Check Other Employees
-      </h3>
-      Check on other employees to determine the status of your team, allowing more
-      oversight in tracking employee daily activities.
-    </div>
-    <div class="span4 info-content">
-      <h3>
-        <i class="icon-globe icon-large"></i>Location Agnostic
-      </h3>
-      Since the platform runs on a web-based server, it can be accessed anywhere there is
-      an internet connection.
-    </div>
-    <div class="span4 info-content">
-      <h3>
-        <i class="icon-rss icon-large"></i>Status Change Subscriptions
-      </h3>
-      Subscribe to your employee/co-workers status updates to receive up-to-the-minute
-      information about their status.
+<div id="quick-stat">
+  <div id="image-container">
+    <div id="quickstat-logo">QuickStat</div>
+    <% if user_signed_in? %>
+      <p>Your current status: <span class="current-status">TODO</span></p>
+    <% else %>
+      <p><%= link_to "Sign in", user_session_path %> for QuickStat capability:</p>
+    <% end %>
+
+    <div id="button-container">
+      <div class="btn btn-success btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">IN</div>
+      <div class="btn btn-danger btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">OUT</div>
     </div>
   </div>
 </div>

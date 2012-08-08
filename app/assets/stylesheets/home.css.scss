@@ -1,26 +1,25 @@
 #home-logo {
+  border-radius: 25px;
   box-shadow: 0 0 5px 5px #666;
-  float: left;
-  margin-top: 10px;
-  padding: 30px;
+  margin-bottom: 10px;
+  padding: 25px;
 
   #title-caption {
     color: #333;
-    float: left;
     font-weight: bold;
     text-align: left;
 
     i {
-      font-size: 80px;
-      line-height: 80px;
-      width: 75px;
+      font-size: 70px;
+      line-height: 60px;
     }
 
     #title-product {
       display: inline;
       font-size: 80px;
+      font-style: italic;
       margin-left: 8px;
-      width: 300px;
+      text-shadow: 2px 2px 2px #333;
 
       .ruby-color {
         color: #981A21;
@@ -29,68 +28,56 @@
 
     p {
       font-size: 25px;
-      font-style: italic;
       margin-top: 8px;
       margin-left: 94px;
     }
   }
-
-  #title-image {
-    float: right;
-    width: 403px;
-
-    #image-container {
-      background-color: #981A21;
-      border-top-left-radius: 25px;
-      border-top-right-radius: 25px;
-      font-size: 40px;
-      font-weight: bold;
-      margin-left: 90px;
-      width: 295px;
-      color: #EEE;
-
-      #quickstat-logo {
-        border-bottom: 2px solid #EEE;
-        font-size: 20px;
-        padding: 5px 0px;
-        margin-bottom: 12px;
-        text-align: center;
-      }
-
-      p {
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 16px;
-        padding: 0px 20px 0px 20px;
-
-        a {
-          color: white;
-        }
-
-        .current-status {
-          color: #f89406;
-        }
-      }
-
-      #button-container {
-        padding: 0px 20px 20px 20px;
-
-        .btn {
-          font-size: 20px;
-          font-style: none;
-          width: 92px;
-        }
-
-        .btn-inverse {
-          background-color: gray;
-        }
-      }
-    }
-  }
 }
 
-#home-info {
-  i {
-    margin-right: 12px;
+#quick-stat {
+  #image-container {
+    background-color: #981A21;
+    border-radius: 25px;
+    border-top: 0;
+    color: #EEE;
+    font-size: 40px;
+    font-weight: bold;
+
+    #quickstat-logo {
+      border-bottom: 2px solid #EEE;
+      font-size: 20px;
+      padding: 5px 0px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 16px;
+      padding: 0px 20px 0px 20px;
+
+      a {
+        color: white;
+      }
+
+      .current-status {
+        color: #f89406;
+      }
+    }
+
+    #button-container {
+      padding: 0px 20px 20px 20px;
+
+      .btn {
+        font-size: 20px;
+        font-style: none;
+        width: 92px;
+      }
+
+      .btn-inverse {
+        background-color: gray;
+      }
+    }
   }
 }
