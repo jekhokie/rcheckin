@@ -46,4 +46,6 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+
+  embeds_one :condition
 end
