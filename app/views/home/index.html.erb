@@ -22,9 +22,9 @@
       <p><i class="icon-signin"></i><%= link_to "Login", user_session_path %> for QuickStat capability</p>
     <% end %>
 
-    <div id="button-container">
-      <div class="btn btn-success btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">IN</div>
-      <div class="btn btn-danger btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">OUT</div>
+    <div class="btn-group" data-toggle="buttons-radio" id="button-container">
+      <button class="btn btn-success btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">IN</button>
+      <button class="btn btn-danger btn-large <%= "btn-inverse disabled" unless user_signed_in? %>">OUT</button>
     </div>
   </div>
 </div>
