@@ -13,5 +13,6 @@
  */
 
 @import "home";
-@import "bootstrap_and_overrides.css.less";
+@import "bootstrap.css.less";
+@import "bootstrap_overrides";
 @import "font-awesome";
