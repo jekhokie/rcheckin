@@ -23,9 +23,7 @@
     <%= render "shared/navigation" %>
 
     <div class="container" id="content">
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-      <% end %>
+      <%= render "shared/flash_messages" %>
 
       <%= yield %>
     </div>

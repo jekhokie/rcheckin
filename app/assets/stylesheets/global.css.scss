@@ -3,3 +3,16 @@ hr.soften {
   height: 2px;
   background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .5), transparent);
 }
+
+.flash-box {
+  float: left;
+  position: absolute;
+  width: 90%;
+  z-index: 1000;
+
+  .alert {
+    box-shadow: 5px 5px 5px 1px black;
+    border: 1px solid;
+    text-align: center;
+  }
+}
