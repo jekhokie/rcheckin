@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe User do
-
   before(:each) do
     @attr = {
       :name => "Example User",
@@ -10,6 +9,12 @@ describe User do
       :password_confirmation => "foobar"
     }
   end
+
+  it "can be instantiated" do
+    User.new.should be_an_instance_of(User)
+  end
+
+  specify { FactoryGirl.build(:user).should be_valid }
 
   it "should create a new instance given a valid attribute" do
     User.create!(@attr)
@@ -50,7 +55,6 @@ describe User do
   end
 
   describe "passwords" do
-
     before(:each) do
       @user = User.new(@attr)
     end
@@ -65,7 +69,6 @@ describe User do
   end
 
   describe "password validations" do
-
     it "should require a password" do
       User.new(@attr.merge(:password => "", :password_confirmation => "")).
         should_not be_valid
@@ -81,11 +84,9 @@ describe User do
       hash = @attr.merge(:password => short, :password_confirmation => short)
       User.new(hash).should_not be_valid
     end
-
   end
 
   describe "password encryption" do
-
     before(:each) do
       @user = User.create!(@attr)
     end
@@ -97,7 +98,5 @@ describe User do
     it "should set the encrypted password attribute" do
       @user.encrypted_password.should_not be_blank
     end
-
   end
-
 end
