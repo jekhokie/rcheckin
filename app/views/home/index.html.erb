@@ -1,8 +1,8 @@
 <div id="home-logo" class="hero-unit">
   <div id="title-caption">
-    <i class="icon-screenshot icon-large"></i>
+    <i class="icon-screenshot icon-large ruby-red"></i>
     <div id="title-product">
-      <span class="ruby-color">R</span>Checkin
+      <span class="ruby-red">RC</span>heckin
     </div>
     <p>
       Keeping your team in touch
@@ -13,10 +13,13 @@
 <div id="quick-stat">
   <div id="image-container">
     <div id="quickstat-logo">QuickStat</div>
+
+    <hr class="soften">
+
     <% if user_signed_in? %>
       <p>Your current status: <span class="current-status">TODO</span></p>
     <% else %>
-      <p><%= link_to "Sign in", user_session_path %> for QuickStat capability:</p>
+      <p><i class="icon-signin"></i><%= link_to "Login", user_session_path %> for QuickStat capability</p>
     <% end %>
 
     <div id="button-container">
