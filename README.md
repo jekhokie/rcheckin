@@ -8,7 +8,7 @@ The homepage in a standard PC browser:
 
 ![alt text](https://github.com/jekhokie/rcheckin/raw/master/public/images/RCheckin_web.jpg "RCheckin Home Page - Web")
 
-The homepage in a web-based browser:
+The homepage in a mobile browser:
 
 ![alt text](https://github.com/jekhokie/rcheckin/raw/master/public/images/RCheckin_mobi.jpg "RCheckin Home Page - Mobile")
 
