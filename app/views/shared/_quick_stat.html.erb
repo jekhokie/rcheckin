@@ -1,0 +1,20 @@
+<div id="quick-stat">
+  <div id="image-container">
+    <div id="quickstat-logo">QuickStat</div>
+
+    <hr class="soften">
+
+    <% if user_signed_in? %>
+      <p>Your current status: <span class="current-status"><%= current_user.condition.state ? "IN" : "OUT" %></span></p>
+    <% else %>
+      <p><i class="icon-signin"></i><%= link_to "Login", user_session_path %> for QuickStat capability</p>
+    <% end %>
+
+    <div class="btn-group" data-toggle="buttons-radio" id="button-container">
+      <button class="btn btn-large <%= "btn-inverse disabled" unless user_signed_in? %>
+                                   <%= "active btn-success" if user_signed_in?  &&  current_user.condition.state %>">IN</button>
+      <button class="btn btn-large <%= "btn-inverse disabled" unless user_signed_in? %>
+                                   <%= "active btn-danger" if user_signed_in? && !current_user.condition.state %>">OUT</button>
+    </div>
+  </div>
+</div>
