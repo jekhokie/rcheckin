@@ -6,8 +6,9 @@ hr.soften {
 
 .flash-box {
   float: left;
+  opacity: 0.9;
   position: absolute;
-  width: 90%;
+  width: 80%;
   z-index: 1000;
 
   .alert {
