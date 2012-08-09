@@ -1,5 +1,7 @@
 # RCheckin
 
+[![Build Status](https://secure.travis-ci.org/jekhokie/rcheckin.png)](http://travis-ci.org/jekhokie/rcheckin)
+
 Although social media and things like Google hangouts provide a slew of capabilities to track someone (location, status, etc.), it is often not appropriate to use these tools in a professional work environment. RCheckin aims to provide a simple web-based service for team members to report their current status, such as when they are in or out of the office, out to lunch, sick, etc. Doing so with a more simple user interface through a self-managed product is more conducive to keeping management informed about team members' whereabouts.
 
 Screenshot
