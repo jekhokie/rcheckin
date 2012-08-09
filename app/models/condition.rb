@@ -1,7 +1,5 @@
-class Condition
-  include Mongoid::Document
+class Condition < ActiveRecord::Base
+  belongs_to :user
 
-  field :status, type: Boolean
-
-  embedded_in :user
+  attr_accessible :state
 end
