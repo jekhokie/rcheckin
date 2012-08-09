@@ -4,9 +4,13 @@ Although social media and things like Google hangouts provide a slew of capabili
 
 Screenshot
 --------
-The homepage:
+The homepage in a standard PC browser:
 
-![alt text](https://github.com/jekhokie/rcheckin/raw/master/public/images/RCheckin.jpg "RCheckin Home Page")
+![alt text](https://github.com/jekhokie/rcheckin/raw/master/public/images/RCheckin_web.jpg "RCheckin Home Page - Web")
+
+The homepage in a web-based browser:
+
+![alt text](https://github.com/jekhokie/rcheckin/raw/master/public/images/RCheckin_mobi.jpg "RCheckin Home Page - Mobile")
 
 Install
 --------
