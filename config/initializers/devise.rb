@@ -13,7 +13,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/mongoid'
+  require 'devise/orm/active_record'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -82,7 +82,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "d3ea5081d5779668132ab38134467ac6e76ae1d2e12f61dea81566484cf2ad4829b013c6e7fcc8ebe5e558d29e098b788f11d201324bf39c26c4caadd912d691"
+  # config.pepper = "512539aa27cfa6c0c2a7e9d70b8bbb623466057dd62ddadf4f37a58e40d10ab449b9350af583f4ba7f054c1c9fbaee48863244c33e31f3c2cd34e04cb73042fc"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -200,7 +200,7 @@ Devise.setup do |config|
   # config.navigational_formats = ["*/*", :html]
 
   # The default HTTP method used to sign out a resource. Default is :delete.
-  config.sign_out_via = Rails.env.test? ? :get : :delete
+  config.sign_out_via = :delete
 
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.7'
 gem 'jquery-rails'
-gem 'mongoid'
+gem 'pg'
 gem 'devise'
 
 group :assets do
@@ -24,7 +24,6 @@ group :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'mongoid-rspec'
 end
 
 group :development, :test do
