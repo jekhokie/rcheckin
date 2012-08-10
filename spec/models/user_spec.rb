@@ -54,6 +54,11 @@ describe User do
     user_with_duplicate_email.should_not be_valid
   end
 
+  it "should create an initial condition when created" do
+    user = User.create!(@attr)
+    user.condition.should_not be_nil
+  end
+
   describe "passwords" do
     before(:each) do
       @user = User.new(@attr)
