@@ -4,3 +4,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore the actual database.yml file in favor of the example
+config/database.yml
