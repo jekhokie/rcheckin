@@ -11,5 +11,6 @@ script:
   - bundle exec cucumber
   - bundle exec rspec spec/
 before_script:
+  - bundle exec rake db:initialize_config
   - mysql -e 'create database rcheckin_test'
   - psql  -c 'create database rcheckin_test' -U postgres
