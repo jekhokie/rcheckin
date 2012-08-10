@@ -14,8 +14,9 @@ module Rcheckin
     # Do not generate views and helpers specs since these
     # will be tested with Cucumber
     config.generators do |g|
-      g.view_specs false
-      g.helper_specs false
+      g.test_framework :rspec
+      g.view_specs     false
+      g.helper_specs   false
     end
 
     # Settings in config/environments/* take precedence over those specified here.
