@@ -24,6 +24,8 @@ group :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'sqlite3'
+  gem 'mysql2'
 end
 
 group :development, :test do

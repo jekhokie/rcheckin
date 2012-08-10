@@ -16,6 +16,15 @@ The homepage in a mobile browser:
 
 ![alt text](https://github.com/jekhokie/rcheckin/raw/master/public/images/RCheckin_mobi.jpg "RCheckin Home Page - Mobile")
 
+Configuration Prerequisites
+--------
+
+In order to ready your RCheckin instance to interact with databases, you must run the following:
+
+    rake db:initialize_config
+
+This will copy the config/database.yml.example to config/database.yml, which can then be customized for your environment.
+
 PostgreSQL Prerequisites
 --------
 
