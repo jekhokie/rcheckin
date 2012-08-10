@@ -7,25 +7,23 @@ gem 'devise'
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'font-awesome-rails'
   gem 'sass'
   gem 'sass-rails'
+  gem 'therubyracer', platforms: :ruby
   gem 'twitter-bootstrap-rails'
-  gem 'font-awesome-rails'
-  gem 'therubyracer', :platforms => :ruby
+  gem 'uglifier', '>= 1.0.3'
 end
 
 group :test do
-  gem 'rspec-rails'
-  gem 'cucumber'
-  gem 'cucumber-rails'
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'launchy'
-  gem 'factory_girl_rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'rspec-rails'
 end
 
 group :development, :test do
-  gem 'rspec'
 end

@@ -189,7 +189,6 @@ DEPENDENCIES
   capybara
   capybara-webkit
   coffee-rails (~> 3.2.1)
-  cucumber
   cucumber-rails
   database_cleaner
   devise
@@ -199,7 +198,6 @@ DEPENDENCIES
   launchy
   pg
   rails (= 3.2.7)
-  rspec
   rspec-rails
   sass
   sass-rails
