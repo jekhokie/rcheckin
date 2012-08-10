@@ -1,0 +1,41 @@
+sqlite: &sqlite
+  adapter:  sqlite3
+  database: db/<%= Rails.env %>.sqlite3
+
+mysql: &mysql
+  adapter:  mysql2
+  username: root
+  password:
+  database: rcheckin_<%= Rails.env %>
+
+postgresql: &postgresql
+  adapter:  postgresql
+  encoding: unicode
+  username: postgres
+  password:
+  database: rcheckin_<%= Rails.env %>
+  min_messages: ERROR
+
+defaults: &defaults
+  adapter:  postgresql
+  encoding: unicode
+  username: rcheckin
+  password: rcheckin
+  database: rcheckin_<%= Rails.env %>
+  min_messages: ERROR
+
+common: &common
+  pool: 5
+  port: 5432
+  host: localhost
+  timeout: 5000
+  <<: *<%= ENV['DB'] || "defaults" %>
+
+development:
+  <<: *common
+
+test:
+  <<: *common
+
+production:
+  <<: *common
