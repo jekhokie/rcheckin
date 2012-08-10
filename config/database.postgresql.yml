@@ -2,19 +2,20 @@ common: &common
   adapter: postgresql
   encoding: unicode
   host: localhost
-  pool: 5
-  port: 5432
-  username: rcheckin
-  password: changeme
+  username: root
+  password:
 
 development:
   <<: *common
   database: rcheckin_development
 
-test:
+test: &TEST
   <<: *common
   database: rcheckin_test
 
 production:
   <<: *common
   database: rcheckin
+
+cucumber:
+  <<: *TEST
