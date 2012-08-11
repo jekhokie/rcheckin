@@ -1,10 +1,14 @@
 <div id="co-users">
-  <div id="users-container">
-    <table class="table table-striped" id="users-container">
+  <div class="tool" id="users-container">
+    <div class="tool-logo">Co-Users</div>
+
+    <hr class="soften min-margin">
+
+    <table>
       <thead>
         <tr>
-          <th>Co-User Name</th>
-          <th>State</th>
+          <th>Name</th>
+          <th class="state">State</th>
         </tr>
       </thead>
       <tbody>
@@ -12,7 +16,7 @@
           <% @users.each do |user| %>
             <tr>
               <td><%= user.name  %></td>
-              <td><%= user.state %></td>
+              <td class="state"><%= user.state %></td>
             </tr>
           <% end %>
         <% else %>

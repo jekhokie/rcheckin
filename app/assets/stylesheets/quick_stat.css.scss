@@ -1,28 +1,10 @@
 #quick-stat {
   #image-container {
-    background-color: #1D2327;
-    border: 3px solid rgba(0, 0, 0, 0.8);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top: 0px;
-    color: #EEE;
     font-size: 40px;
-    font-weight: bold;
     float: right;
-    margin: 0px auto;
     margin-right: 10px;
     min-width: 270px;
-    -webkit-box-shadow: inset 0px 5px 8px -2px black;
-
-    #quickstat-logo {
-      font-size: 20px;
-      padding-top: 12px;
-      text-align: center;
-    }
-
-    hr.soften {
-      margin: 8px 0px;
-    }
+    width: 30%;
 
     p {
       font-size: 16px;
@@ -43,10 +25,6 @@
       a:hover {
         color: white;
       }
-
-      .current-status {
-        color: #f89406;
-      }
     }
 
     #button-container {
@@ -55,31 +33,31 @@
       form {
         float: left;
         width: 50%;
-      }
 
-      .btn {
-        display: inline;
-        font-size: 20px;
-        font-style: none;
-        width: 100%;
-      }
+        .btn {
+          display: inline;
+          font-size: 20px;
+          font-style: none;
+          width: 100%;
+        }
 
-      .btn-inverse {
-        background-color: gray;
-      }
+        .btn-inverse {
+          background-color: gray;
+        }
 
-      .btn.state-in {
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-      }
+        .btn.state-in {
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 0px;
+        }
 
-      .btn.state-out {
-        border-top-left-radius: 0px;
-        border-bottom-left-radius: 0px;
-      }
+        .btn.state-out {
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+        }
 
-      .btn.active {
-        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        .btn.active {
+          text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        }
       }
     }
   }
@@ -92,6 +70,15 @@
       border-radius: 0px;
       float: none;
       width: 100%;
+    }
+
+    #button-container {
+      form {
+        input.btn-large {
+          line-height: 18px;
+          padding: 4px 10px 4px;
+        }
+      }
     }
   }
 }

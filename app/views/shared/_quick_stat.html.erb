@@ -1,8 +1,8 @@
 <div id="quick-stat">
-  <div id="image-container">
-    <div id="quickstat-logo">QuickStat</div>
+  <div class="tool" id="image-container">
+    <div class="tool-logo">QuickStat</div>
 
-    <hr class="soften">
+    <hr class="soften min-margin">
 
     <% unless user_signed_in? %>
       <p><i class="icon-signin"></i><%= link_to "Login", user_session_path %> for QuickStat capability</p>
