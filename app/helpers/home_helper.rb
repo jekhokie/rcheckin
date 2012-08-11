@@ -13,9 +13,9 @@ module HomeHelper
 
     if user_signed_in?
       if name == "IN"
-        button_class += " active btn-success" if  current_user.condition.state
+        button_class += " active btn-success" if current_user.state == "IN"
       elsif name == "OUT"
-        button_class += " active btn-danger"  if !current_user.condition.state
+        button_class += " active btn-danger"  if current_user.state == "OUT"
       end
     else
       button_class += " btn-inverse disabled"
