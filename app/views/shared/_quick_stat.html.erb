@@ -5,7 +5,7 @@
     <hr class="soften">
 
     <% if user_signed_in? %>
-      <p>Your current status: <span class="current-status"><%= current_user.condition.state ? "IN" : "OUT" %></span></p>
+      <p>Your current state: <span class="current-status"><%= current_user.state %></span></p>
     <% else %>
       <p><i class="icon-signin"></i><%= link_to "Login", user_session_path %> for QuickStat capability</p>
     <% end %>
