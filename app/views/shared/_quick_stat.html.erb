@@ -11,10 +11,13 @@
     <% end %>
 
     <div class="btn-group" data-toggle="buttons-radio" id="button-container">
-      <button class="btn btn-large <%= "btn-inverse disabled" unless user_signed_in? %>
-                                   <%= "active btn-success" if user_signed_in?  &&  current_user.condition.state %>">IN</button>
-      <button class="btn btn-large <%= "btn-inverse disabled" unless user_signed_in? %>
-                                   <%= "active btn-danger" if user_signed_in? && !current_user.condition.state %>">OUT</button>
+      <% if user_signed_in? %>
+        <%= button_to "IN",  state_button_link("IN"),  { :method => :put, :remote => true, :class => state_button_class("IN") } %>
+        <%= button_to "OUT", state_button_link("OUT"), { :method => :put, :remote => true, :class => state_button_class("OUT") } %>
+      <% else %>
+        <%= button_to "IN",  '#', :class => state_button_class("IN")  %>
+        <%= button_to "OUT", '#', :class => state_button_class("OUT") %>
+      <% end %>
     </div>
   </div>
 </div>
