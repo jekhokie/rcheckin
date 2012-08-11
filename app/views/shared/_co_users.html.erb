@@ -1,0 +1,26 @@
+<div id="co-users">
+  <div id="users-container">
+    <table class="table table-striped" id="users-container">
+      <thead>
+        <tr>
+          <th>Co-User Name</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if user_signed_in? %>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name  %></td>
+              <td><%= user.state %></td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="2">Sign in to view users.</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
