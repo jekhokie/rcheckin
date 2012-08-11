@@ -11,6 +11,7 @@
     float: right;
     margin: 0px auto;
     margin-right: 10px;
+    min-width: 270px;
     -webkit-box-shadow: inset 0px 5px 8px -2px black;
 
     #quickstat-logo {
@@ -51,14 +52,30 @@
     #button-container {
       padding: 0px 20px 8px 20px;
 
+      form {
+        float: left;
+        width: 50%;
+      }
+
       .btn {
+        display: inline;
         font-size: 20px;
         font-style: none;
-        width: 50%;
+        width: 100%;
       }
 
       .btn-inverse {
         background-color: gray;
+      }
+
+      .btn.state-in {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+
+      .btn.state-out {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
       }
 
       .btn.active {
