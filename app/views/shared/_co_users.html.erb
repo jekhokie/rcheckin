@@ -16,7 +16,7 @@
           <% @users.each do |user| %>
             <tr>
               <td><%= user.name  %></td>
-              <td class="state"><%= user.state %></td>
+              <td class="state"><i class="icon-star state-star <%= state_star_class(user.state) %>"></i></td>
             </tr>
           <% end %>
         <% else %>

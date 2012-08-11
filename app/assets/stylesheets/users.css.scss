@@ -8,6 +8,7 @@
 
     table {
       font-size: 16px;
+      vertical-align: middle;
       width: 100%;
 
       tr .state {
@@ -20,9 +21,28 @@
         text-align: left;
       }
 
-      tbody tr td {
-        padding: 5px;
-        vertical-align: middle;
+      tbody {
+        tr {
+          border-top: 1px dashed;
+
+          td {
+            padding: 5px;
+
+            i.state-star {
+              font-size: 23px;
+              text-shadow: 1px 1px 2px black;
+              -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 32, 64, 0.3)), to(rgba(128, 128, 128, 0.9)));
+            }
+
+            i.state-star-in {
+              color: green;
+            }
+
+            i.state-star-out {
+              color: red;
+            }
+          }
+        }
       }
     }
   }
@@ -31,10 +51,16 @@
 @media (max-width: 767px) {
   #co-users {
     #users-container {
-      border-top: 1px solid black;
       border-radius: 0px;
+      border-top: 1px solid black;
       float: none;
+      padding-left: 0px;
+      padding-right: 0px;
       width: 100%;
+
+      table tbody tr {
+        border-top: 1px solid;
+      }
     }
   }
 }

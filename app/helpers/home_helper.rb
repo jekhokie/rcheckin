@@ -23,4 +23,15 @@ module HomeHelper
 
     button_class
   end
+
+  def state_star_class(name)
+    case name
+    when "IN"
+      return "state-star-in"
+    when "OUT"
+      return "state-star-out"
+    else
+      return "state-star-unknown"
+    end
+  end
 end

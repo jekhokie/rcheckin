@@ -38,3 +38,9 @@ hr.soften.min-margin {
     text-align: center;
   }
 }
+
+@media (max-width: 767px) {
+  .tool {
+    border: 0px;
+  }
+}
