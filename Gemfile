@@ -32,4 +32,7 @@ group :development, :test do
   gem 'rspec'
   gem 'jasmine'
   gem 'jasminerice'
+  gem 'guard-jasmine'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
 end
