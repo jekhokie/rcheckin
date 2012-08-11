@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
+  respond_to :js
+
   before_filter :authenticate_user!
 
   def index
-    @users = User.all
+    respond_with @users = User.all
   end
 
   def show
-    @user = User.find params[:id]
+    respond_with @user = User.find(params[:id])
   end
 end
