@@ -1,12 +1,10 @@
 <div id="quick-stat">
-  <div id="image-container">
-    <div id="quickstat-logo">QuickStat</div>
+  <div class="tool" id="image-container">
+    <div class="tool-logo">QuickStat</div>
 
-    <hr class="soften">
+    <hr class="soften min-margin">
 
-    <% if user_signed_in? %>
-      <p>Your current status: <span class="current-status"><%= current_user.condition.state ? "IN" : "OUT" %></span></p>
-    <% else %>
+    <% unless user_signed_in? %>
       <p><i class="icon-signin"></i><%= link_to "Login", user_session_path %> for QuickStat capability</p>
     <% end %>
 

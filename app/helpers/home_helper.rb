@@ -13,14 +13,25 @@ module HomeHelper
 
     if user_signed_in?
       if name == "IN"
-        button_class += " active btn-success" if  current_user.condition.state
+        button_class += " active btn-success" if current_user.state == "IN"
       elsif name == "OUT"
-        button_class += " active btn-danger"  if !current_user.condition.state
+        button_class += " active btn-danger"  if current_user.state == "OUT"
       end
     else
       button_class += " btn-inverse disabled"
     end
 
     button_class
+  end
+
+  def state_star_class(name)
+    case name
+    when "IN"
+      return "state-star-in"
+    when "OUT"
+      return "state-star-out"
+    else
+      return "state-star-unknown"
+    end
   end
 end

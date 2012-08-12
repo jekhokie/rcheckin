@@ -59,6 +59,27 @@ describe User do
     user.condition.should_not be_nil
   end
 
+  describe "state" do
+    before(:all) do
+      @user = FactoryGirl.create :user
+      @condition = @user.condition
+    end
+
+    it "should have a state method" do
+      @user.should respond_to(:state)
+    end
+
+    it "should report 'IN' for condition state" do
+      @condition.update_attribute :state, true
+      @user.state.should == "IN"
+    end
+
+    it "should report 'OUT' for condition state" do
+      @condition.update_attribute :state, false
+      @user.state.should == "OUT"
+    end
+  end
+
   describe "passwords" do
     before(:each) do
       @user = User.new(@attr)

@@ -4,6 +4,10 @@ hr.soften {
   background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, .5), transparent);
 }
 
+hr.soften.min-margin {
+  margin: 8px 0px;
+}
+
 .flash-box {
   float: left;
   opacity: 0.9;
@@ -15,5 +19,28 @@ hr.soften {
     box-shadow: 5px 5px 5px 1px black;
     border: 1px solid;
     text-align: center;
+  }
+}
+
+.tool {
+  background-color: #1D2327;
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-top: 0px;
+  color: #EEE;
+  margin: 0px auto;
+  -webkit-box-shadow: inset 0px 5px 8px -2px black;
+
+  .tool-logo {
+    font-size: 20px;
+    padding-top: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .tool {
+    border: 0px;
   }
 }

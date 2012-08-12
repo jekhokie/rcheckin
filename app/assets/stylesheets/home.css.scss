@@ -48,25 +48,7 @@
     }
 
     #home-logo {
-      border-left: 0px;
-      border-radius: 0px;
-      border-right: 0px;
-      padding: 5px;
-
-      #title-caption {
-        i {
-          font-size: 40px;
-        }
-
-        #title-product {
-          font-size: 40px;
-        }
-
-        p {
-          font-size: 14px;
-          margin-left: 50px;
-        }
-      }
+      display: none;
     }
   }
 }

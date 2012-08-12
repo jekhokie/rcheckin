@@ -1,3 +1,66 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#co-users {
+  #users-container {
+    float: left;
+    width: 45%;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+
+    table {
+      font-size: 16px;
+      vertical-align: middle;
+      width: 100%;
+
+      tr .state {
+        text-align: center;
+      }
+
+      thead tr th {
+        font-weight: bold;
+        padding: 5px;
+        text-align: left;
+      }
+
+      tbody {
+        tr {
+          border-top: 1px dashed;
+
+          td {
+            padding: 5px;
+
+            i.state-star {
+              font-size: 23px;
+              text-shadow: 1px 1px 2px black;
+              -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 32, 64, 0.3)), to(rgba(128, 128, 128, 0.9)));
+            }
+
+            i.state-star-in {
+              color: green;
+            }
+
+            i.state-star-out {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #co-users {
+    #users-container {
+      border-radius: 0px;
+      border-top: 1px solid black;
+      float: none;
+      padding-left: 0px;
+      padding-right: 0px;
+      width: 100%;
+
+      table tbody tr {
+        border-top: 1px solid;
+      }
+    }
+  }
+}

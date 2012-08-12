@@ -1,7 +1,7 @@
 class CreateConditions < ActiveRecord::Migration
   def up
     create_table :conditions do |t|
-      t.boolean :state, :default => false
+      t.boolean :state, :default => true
 
       t.references :user
 
