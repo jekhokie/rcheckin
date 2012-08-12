@@ -13,7 +13,7 @@
       </thead>
       <tbody>
         <% if user_signed_in? %>
-          <% @users.each do |user| %>
+          <% @users.reject{ |user| user.id == current_user.id }.each do |user| %>
             <tr>
               <td><%= user.name  %></td>
               <td class="state"><i class="icon-star state-star <%= state_star_class(user.state) %>"></i></td>
