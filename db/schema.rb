@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(:version => 20120809191311) do
 
   create_table "conditions", :force => true do |t|
-    t.boolean  "state",      :default => false
+    t.boolean  "state",      :default => true
     t.integer  "user_id"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "users", :force => true do |t|

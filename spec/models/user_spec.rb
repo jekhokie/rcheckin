@@ -61,7 +61,7 @@ describe User do
 
   describe "state" do
     before(:all) do
-      @user = FactoryGirl.create :user_with_condition
+      @user = FactoryGirl.create :user
       @condition = @user.condition
     end
 

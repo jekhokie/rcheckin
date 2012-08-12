@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe UsersController do
   before (:each) do
-    @user = FactoryGirl.create :user_with_condition
+    @user = FactoryGirl.create :user
     sign_in @user
   end
 
