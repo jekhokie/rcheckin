@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render "layouts/common_header" %>
+
+    <title>RCMobile</title>
+
+    <%= stylesheet_link_tag    "application.mobile", :media => "all" %>
+
+    <%= javascript_include_tag "application.mobile" %>
+  </head>
+
+  <body>
+    <div data-role="page" data-theme="b">
+      <div data-role="header">
+        <h1>RCMobile</h1>
+        <%= render "shared/navigation" %>
+      </div>
+
+      <div data-role="content">
+        <%= yield %>
+      </div>
+
+      <div data-role="footer">
+      </div>
+    </div>
+  </body>
+</html>
