@@ -1,0 +1,19 @@
+#co-users {
+  ul {
+    li[data-role="list-divider"] {
+      text-align: center;
+    }
+
+    li.state-in {
+      span.ui-icon {
+        background-color: green;
+      }
+    }
+
+    li.state-out {
+      span.ui-icon {
+        background-color: red;
+      }
+    }
+  }
+}

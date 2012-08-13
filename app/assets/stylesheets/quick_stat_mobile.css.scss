@@ -1,5 +1,28 @@
 #quick-stat {
+  li[data-role="list-divider"] {
+    text-align: center;
+  }
+
+  li.button-container {
+    padding-top: 0px;
+    padding-bottom: 13px;
+  }
+
   a {
     width: 49%;
+  }
+
+  a.active {
+    background-image: linear-gradient(#5393C5,#6FACD5);
+  }
+
+  a.active.state-in {
+    background-image: linear-gradient(#5F9CC5,#396B9E);
+    text-shadow: 1px -1px 1px black;
+  }
+
+  a.active.state-out {
+    background-image: linear-gradient(#EE5E3D, #CC3512);
+    text-shadow: 1px -1px 1px black;
   }
 }
