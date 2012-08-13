@@ -9,5 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require "jquery_mobile/jquery.mobile-1.1.1.min"
+ *= require "jquery_mobile/jquery.mobile.structure-1.1.1.min"
+ *= require "jquery_mobile/jquery.mobile.theme-1.1.1.min"
  *= require quick_stat_mobile
  */
