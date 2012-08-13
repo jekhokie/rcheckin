@@ -1,6 +1,15 @@
-<div data-role="controlgroup" data-type="horizontal">
-  <%= link_to "IN", state_button_link("IN"),   { :method => :put, :remote => true, "data-role" => "button",
-                                                 :class => "#{"ui-btn-down-b" if user_signed_in? && current_user.state == "IN"}" } %>
-  <%= link_to "OUT", state_button_link("OUT"), { :method => :put, :remote => true, "data-role" => "button",
-                                                 :class => "#{"ui-btn-down-b" if user_signed_in? && current_user.state == "OUT"}" } %>
-</div>
+<ul data-role="listview" data-theme="c" data-divider-theme="d">
+  <li data-role="list-divider">QuickStat</li>
+  <li class="button-container">
+    <div data-role="controlgroup" data-type="horizontal">
+      <% if user_signed_in? %>
+        <%= link_to (user_signed_in? and current_user.state == "IN" ? "I am IN" : "IN"), state_button_link("IN"),
+                    { :method => :put, :remote => true, "data-role" => "button", "data-theme" => (current_user.state == "IN"  ? "g" : "c"),
+                    :class => "#{"active state-in  ui-state-persist ui-btn-active" if current_user.state == "IN" }" } %>
+        <%= link_to (user_signed_in? and current_user.state == "OUT" ? "I am OUT" : "OUT"), state_button_link("OUT"),
+                    { :method => :put, :remote => true, "data-role" => "button", "data-theme" => (current_user.state == "OUT" ? "f" : "c"),
+                    :class => "#{"active state-out ui-state-persist ui-btn-active" if current_user.state == "OUT"}" } %>
+      <% end %>
+    </div>
+  </li>
+</ul>
