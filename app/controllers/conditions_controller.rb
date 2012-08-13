@@ -1,5 +1,5 @@
 class ConditionsController < ApplicationController
-  respond_to :js
+  respond_to :js, :mobile
 
   before_filter :find_user, :authenticate_user!
 
