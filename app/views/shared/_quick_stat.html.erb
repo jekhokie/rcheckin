@@ -10,8 +10,8 @@
 
     <div class="btn-group" data-toggle="buttons-radio" id="button-container">
       <% if user_signed_in? %>
-        <%= button_to "IN",  state_button_link("IN"),  { :method => :put, :remote => true, :class => state_button_class("IN") } %>
-        <%= button_to "OUT", state_button_link("OUT"), { :method => :put, :remote => true, :class => state_button_class("OUT") } %>
+        <%= button_to (current_user.state == "IN"  ? "I am IN" : "IN"),   state_button_link("IN"),  { :method => :put, :remote => true, :class => state_button_class("IN") } %>
+        <%= button_to (current_user.state == "OUT" ? "I am OUT" : "OUT"), state_button_link("OUT"), { :method => :put, :remote => true, :class => state_button_class("OUT") } %>
       <% else %>
         <%= button_to "IN",  '#', { :disabled => 'true', :class => state_button_class("IN")  } %>
         <%= button_to "OUT", '#', { :disabled => 'true', :class => state_button_class("OUT") } %>
