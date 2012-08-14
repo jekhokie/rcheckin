@@ -1,0 +1,12 @@
+<div data-role="navbar">
+  <% if user_signed_in? %>
+    <ul class="ui-grid">
+      <%= link_to (current_user.state == "IN" ? "I am IN" : "IN"), state_button_link("IN"),
+                  { :method => :put, :remote => true, "data-role" => "button", "data-theme" => (current_user.state == "IN"  ? "g" : "c"),
+                  :class => "ui-block-a #{"active state-in  ui-state-persist ui-btn-active" if current_user.state == "IN" }" } %>
+      <%= link_to (current_user.state == "OUT" ? "I am OUT" : "OUT"), state_button_link("OUT"),
+                  { :method => :put, :remote => true, "data-role" => "button", "data-theme" => (current_user.state == "OUT" ? "f" : "c"),
+                  :class => "ui-block-b #{"active state-out ui-state-persist ui-btn-active" if current_user.state == "OUT"}" } %>
+    </ul>
+  <% end %>
+</div>

@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require jquery.livequery
+//= require jquery_mobile_overrides
+//= require "jquery_mobile/jquery.mobile-1.1.1.min"

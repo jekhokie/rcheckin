@@ -7,12 +7,12 @@ Feature: Check In/Out
   Scenario: User checks out
     Given I am logged in
     When I click "OUT" in the QuickStat tool
-    Then the QuickStat tool should report me as "OUT"
+    Then the QuickStat tool should report me as "I am OUT"
 
   Scenario: User checks in
     Given I am logged in
     When I click "IN" in the QuickStat tool
-    Then the QuickStat tool should report me as "IN"
+    Then the QuickStat tool should report me as "I am IN"
 
   Scenario: Logged out user can't change state
     Given I am not logged in
