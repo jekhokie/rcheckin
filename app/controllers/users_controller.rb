@@ -1,13 +1,21 @@
 class UsersController < ApplicationController
-  respond_to :js
-
   before_filter :authenticate_user!
 
   def index
-    respond_with @users = User.all
+    @users = User.all
+
+    respond_to do |format|
+      format.any(:js, :mobile, :mobilejs)
+      format.html { render :json => @users }
+    end
   end
 
   def show
-    respond_with @user = User.find(params[:id])
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.any(:js, :mobile, :mobilejs)
+      format.html { render :json => @user }
+    end
   end
 end

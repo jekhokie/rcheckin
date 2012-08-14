@@ -1,16 +1,23 @@
 class ConditionsController < ApplicationController
-  respond_to :js, :mobile
-
   before_filter :find_user, :authenticate_user!
 
   def show
-    respond_with @condition = @user.condition
+    @condition = @user.condition
+
+    respond_to do |format|
+      format.any(:js, :mobile, :mobilejs)
+      format.html { render :json => @condition }
+    end
   end
 
   def update
     @user.condition.update_attributes params[:condition]
+    @condition = @user.condition
 
-    respond_with @condition = @user.condition
+    respond_to do |format|
+      format.any(:js, :mobile, :mobilejs)
+      format.html { render :json => @condition }
+    end
   end
 
   private
