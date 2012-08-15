@@ -5,9 +5,9 @@ gem 'heroku'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.8'
+gem 'coffee-rails', '~> 3.2.1'
 
 group :assets do
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'font-awesome-rails'
   gem 'sass'
   gem 'sass-rails'
