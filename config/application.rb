@@ -19,6 +19,11 @@ module Rcheckin
       g.helper_specs   false
     end
 
+    # Ensure Heroku does not attempt to initialize the application and connect
+    # to the database when precompiling assets (this will cause a "Cannot connect
+    # to localhost" error)
+    config.assets.initialize_on_precompile = false
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
