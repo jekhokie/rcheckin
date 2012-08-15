@@ -7,3 +7,11 @@
 
 # Ignore the actual database.yml file in favor of the example
 config/database.yml
+
+# Ignore the assets directory since precompiled files for the
+# asset pipeline go in here (are generated on run)
+public/assets
+
+# Ignore the precompiled SASS cache that is generated when
+# running Foreman
+.sass-cache

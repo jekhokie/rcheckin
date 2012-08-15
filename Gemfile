@@ -1,38 +1,44 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'devise'
+gem 'heroku'
 gem 'jquery-rails'
 gem 'pg'
-gem 'devise'
+gem 'rails', '3.2.8'
+gem 'coffee-rails', '~> 3.2.1'
 
 group :assets do
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'font-awesome-rails'
   gem 'sass'
   gem 'sass-rails'
-  gem 'twitter-bootstrap-rails'
-  gem 'font-awesome-rails'
   gem 'therubyracer', :platforms => :ruby
+  gem 'twitter-bootstrap-rails'
+  gem 'uglifier', '>= 1.0.3'
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'launchy'
-  gem 'factory_girl_rails'
   gem 'database_cleaner'
-  gem 'sqlite3'
+  gem 'factory_girl_rails'
+  gem 'launchy'
   gem 'mysql2'
+  gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :development, :test do
-  gem 'rspec'
-  gem 'jasmine'
-  gem 'jasminerice'
+  gem 'foreman'
   gem 'guard-jasmine'
   gem 'guard-rspec'
   gem 'guard-cucumber'
+  gem 'jasmine'
+  gem 'jasminerice'
+  gem 'rspec'
+end
+
+group :production do
+  gem 'thin'
 end
