@@ -2,7 +2,7 @@
   <ul data-role="listview" data-theme="c" data-divider-theme="d">
     <li data-role="list-divider">Co-Users</li>
     <% @users.reject{ |user| user.id == current_user.id }.each do |user| %>
-      <li class="<%= user.state == "IN" ? "state-in" : "state-out" %>"
+      <li class="<%= user.state == "IN" ? "state-in" : "state-out" %>" id="<%= dom_id user %>"
           data-iconpos="right" data-icon="<%= user.state == "IN" ? "check" : "delete" %>">
         <%= link_to user.name, "#" %>
       </li>
