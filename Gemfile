@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'coffee-rails', '~> 3.2.1'
 gem 'devise'
+gem 'faye'
 gem 'heroku'
 gem 'jquery-rails'
 gem 'pg'
 gem 'rails', '3.2.8'
-gem 'coffee-rails', '~> 3.2.1'
+gem 'thin'
 
 group :assets do
   gem 'font-awesome-rails'
@@ -37,8 +39,4 @@ group :development, :test do
   gem 'jasmine'
   gem 'jasminerice'
   gem 'rspec'
-end
-
-group :production do
-  gem 'thin'
 end
