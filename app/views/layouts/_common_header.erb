@@ -4,6 +4,11 @@
 <meta name="description" content="Employee Status Tracker">
 <meta name="author" content="jekhokie">
 
-<%= javascript_include_tag "http://localhost:9292/faye.js" %>
+<%= javascript_include_tag "#{APP_CONFIG[:faye_url]}/faye.js" %>
+
+<!-- Used to access Faye pub/sub server -->
+<%= javascript_tag do %>
+  window.fayeUrl = "<%= j APP_CONFIG[:faye_url] %>";
+<% end %>
 
 <%= csrf_meta_tags %>

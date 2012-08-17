@@ -1,5 +1,5 @@
 $ ->
-  faye = new Faye.Client("http://localhost:9292/faye")
+  faye = new Faye.Client(fayeUrl + "/faye")
   faye.subscribe "/conditions/update", (data) ->
     user = JSON.parse(data).condition
     user_row = $("#co-users ul li[id='user_" + user.user_id + "']")
