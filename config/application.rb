@@ -3,6 +3,9 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 require 'net/http'
 
+# Import configuration settings
+APP_CONFIG = YAML.load_file("config/initializers/application_config.yml")[Rails.env].to_options
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))

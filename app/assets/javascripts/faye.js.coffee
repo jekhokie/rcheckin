@@ -1,2 +1,2 @@
 $ ->
-  faye = new Faye.Client("http://localhost:9292/faye")
+  faye = new Faye.Client(fayeUrl + "/faye")
