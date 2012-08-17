@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 3.2.1'
 gem 'devise'
-gem 'faye'
 gem 'heroku'
 gem 'jquery-rails'
 gem 'pg'
