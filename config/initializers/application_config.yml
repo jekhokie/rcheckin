@@ -1,0 +1,8 @@
+development:
+  faye_url: "http://localhost:9292"
+
+test:
+  faye_url: "http://localhost:9292"
+
+production:
+  faye_url: "http://rcheckin-faye.herokuapp.com"
