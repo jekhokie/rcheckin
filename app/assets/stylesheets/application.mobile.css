@@ -8,10 +8,10 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require "jquery_mobile/jquery.mobile-1.1.1.min"
- *= require "jquery_mobile/jquery.mobile.structure-1.1.1.min"
- *= require "jquery_mobile/jquery.mobile.theme-1.1.1.min"
- *= require "jquery_mobile/jquery.mobile.additional.button.themes.css"
+ *= require jquery.mobile-1.1.1.min
+ *= require jquery.mobile.structure-1.1.1.min
+ *= require jquery.mobile.theme-1.1.1.min
+ *= require jquery.mobile.additional.button.themes
  *= require quick_stat_mobile
  *= require users_mobile
  */
