@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
 
   before_create :initialize_condition
 
+  validates :email, :presence     => true,
+                    :email_format => true,
+                    :uniqueness   => { :case_sensitive => false }
+
   def state
     condition.nil? ? "" : (condition.state ? "IN" : "OUT")
   end
