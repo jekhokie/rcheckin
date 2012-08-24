@@ -30,4 +30,19 @@ RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner.clean
   end
+
+  # OmniAuth mock object configuration
+  OmniAuth.config.test_mode = true
+
+  OmniAuth.config.mock_auth[:facebook] = {
+    "provider" => "facebook",
+    "uid"      => "1241241",
+    "info"     => { "email" => "test@example.com" }
+  }
+
+  OmniAuth.config.mock_auth[:google] = {
+    "provider" => "google",
+    "uid"      => "523525",
+    "info"     => { "email"  => "test@example.com" }
+  }
 end
