@@ -1,5 +1,6 @@
 Rcheckin::Application.routes.draw do
   root :to => 'home#index'
-  resource :condition, :only => [ :show, :update ]
-  resources :users, :only => [ :show, :index ]
+
+  match "/signin"                  => "authentications#new"
+  match "/auth/:provider/callback" => "authentications#create"
 end
