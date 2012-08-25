@@ -70,4 +70,21 @@ class AuthenticationsController < ApplicationController
       render "new"
     end
   end
+
+  def signout
+    if current_user
+      session[:user_id] = nil
+      session[:authentication_id] = nil
+
+      session.delete :user_id
+      session.delete :authentication_id
+
+      flash[:notice] = "Signed out successfully"
+    end
+
+    session[:auth_hash] = nil
+    session.delete :auth_hash
+
+    render "home/index"
+  end
 end
