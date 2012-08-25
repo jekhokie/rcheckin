@@ -3,7 +3,7 @@ class AuthenticationsController < ApplicationController
   protect_from_forgery :except => :create
 
   def new
-    @authentication_providers = [ "facebook" ]
+    render
   end
 
   def create

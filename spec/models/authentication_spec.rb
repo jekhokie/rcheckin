@@ -41,4 +41,16 @@ describe Authentication do
       FactoryGirl.build(:authentication, :user => authentication.user, :provider => authentication.provider).should_not be_valid
     end
   end
+
+  describe "#providers" do
+    specify { Authentication.should respond_to(:providers) }
+
+    it "should return facebook" do
+      Authentication.providers.should include("facebook")
+    end
+
+    it "should return github" do
+      Authentication.providers.should include("github")
+    end
+  end
 end

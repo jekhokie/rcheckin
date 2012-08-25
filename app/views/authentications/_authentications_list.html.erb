@@ -1,3 +1,5 @@
-<% @authentication_providers.each do |provider| %>
-  <%= link_to image_tag("#{provider}_64.png", :size => "64x64", :alt => provider.titleize, :class => "img-rounded"), "/auth/#{provider}" %>
+<% Authentication.providers.each do |provider| %>
+  <% unless session[:auth_hash] and session[:auth_hash][:provider] == provider %>
+    <%= link_to image_tag("#{provider}_64.png", :size => "64x64", :alt => provider.titleize, :class => "img-rounded"), "/auth/#{provider}" %>
+  <% end %>
 <% end %>
