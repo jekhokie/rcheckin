@@ -13,7 +13,7 @@
 
       <div class="nav-collapse">
         <ul class="nav">
-          <li class=<%= 'active' if controller_name == 'home' %>>
+          <li class=<%= 'active' unless controller_name == 'users' and action_name == 'index' %>>
             <%= link_to 'Home', root_path %>
           </li>
           <% if user_signed_in? %>
@@ -26,9 +26,9 @@
         <ul class="nav pull-right">
           <li>
             <% if user_signed_in? %>
-              <%= link_to 'Sign Out', signout_path, :method => 'delete' %>
+              <%= link_to 'Sign Out', signout_path, :method => 'delete', :remote => true %>
             <% else %>
-              <%= link_to 'Sign In',  signin_path %>
+              <%= link_to 'Sign In',  signin_path, :remote => true %>
             <% end %>
           </li>
         </ul>

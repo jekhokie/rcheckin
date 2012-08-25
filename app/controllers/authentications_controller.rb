@@ -5,7 +5,10 @@ class AuthenticationsController < ApplicationController
   protect_from_forgery :except => :create
 
   def new
-    render
+    respond_to do |format|
+      format.any(:js, :mobile, :mobilejs)
+      format.html { render }
+    end
   end
 
   def create

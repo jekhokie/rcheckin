@@ -1,0 +1,11 @@
+<ul data-role="listview" data-theme="c" data-divider-theme="d">
+  <li data-role="list-divider">Please Sign In</li>
+  <% Authentication.providers.each do |provider| %>
+    <li>
+      <a href="/auth/<%= provider %>" data-ajax="false">
+        <%= image_tag "#{provider}_128.png", :alt => provider %>
+        <%= provider.titleize %>
+      </a>
+    </li>
+  <% end %>
+</ul>
