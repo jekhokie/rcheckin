@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe ConditionsController do
   before (:each) do
-    @user = FactoryGirl.create :user
+    authentication = FactoryGirl.create :authentication
+    @user = authentication.user
+    session[:user_id] = @user.id
   end
 
   describe "GET 'show'" do

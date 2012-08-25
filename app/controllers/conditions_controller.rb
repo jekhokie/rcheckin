@@ -1,5 +1,5 @@
 class ConditionsController < ApplicationController
-  before_filter :find_user
+  before_filter :authenticate_user!, :find_user
 
   def show
     @condition = @user.condition
