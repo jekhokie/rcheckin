@@ -1,8 +1,6 @@
 class AuthenticationsController < ApplicationController
   def new
-    respond_to do |format|
-      format.html
-    end
+    @authentication_providers = [ "facebook" ]
   end
 
   def create
