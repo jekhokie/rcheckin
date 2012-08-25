@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email
 
-  has_one :condition
+  has_one  :condition
+  has_many :authentications
 
   before_create :initialize_condition
 
