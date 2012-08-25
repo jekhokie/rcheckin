@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!, :except => [ :new ]
+
   def index
     @users = User.all
 
@@ -15,5 +17,9 @@ class UsersController < ApplicationController
       format.any(:js, :mobile, :mobilejs)
       format.html { render :json => @user }
     end
+  end
+
+  def new
+    @user = User.new :email => (session[:auth_hash][:email] ? session[:auth_hash][:email] : '')
   end
 end

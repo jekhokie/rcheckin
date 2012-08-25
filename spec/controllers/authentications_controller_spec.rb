@@ -165,7 +165,7 @@ describe AuthenticationsController do
       end
 
       it "should allow the user to sign up" do
-        response.should render_template("authentications/new")
+        response.should redirect_to(new_user_path)
       end
     end
   end
