@@ -2,9 +2,16 @@ require 'spec_helper'
 
 describe AuthenticationsController do
   describe "GET 'new'" do
-    it "should present the sign in page" do
+    before do
       get :new
+    end
+
+    it "should present the sign in page" do
       response.should render_template("authentications/new")
+    end
+
+    it "should assign the authentication providers" do
+      assigns(:authentication_providers).should_not be_empty
     end
   end
 
@@ -41,47 +48,105 @@ describe AuthenticationsController do
         @authentication = FactoryGirl.create :authentication, :provider => @auth_hash["provider"],
                                                               :uid      => @auth_hash["uid"]
         @user = @authentication.user
-
-        post :create, :provider => @auth_hash["provider"]
       end
 
       it "should assign the user id to the current session" do
-        session[:user_id].should_not be_nil
+        post :create, :provider => @auth_hash["provider"]
         session[:user_id].should == @user.id
       end
 
       it "should assign the authentication id to the current session" do
-        session[:authentication_id].should_not be_nil
+        post :create, :provider => @auth_hash["provider"]
         session[:authentication_id].should == @authentication.id
       end
 
       describe "that is signed in" do
+        before do
+          session[:user_id] = @user.id
+        end
+
         describe "for an unknown authentication source" do
-          it "should prompt to add the new authentication source" do
-            response.should render_template("authentications#edit")
+          before do
+            post :create, :provider => "bogus"
           end
 
           it "should inform the user that the source is not known" do
-            flash[:notice].should_not be_nil
-            flash[:notice].should == "New authentication mechanism detected..."
+            flash[:error].should == "Error while authenticating via Bogus - invalid data"
           end
         end
 
         describe "for a known authentication source" do
-          it "should inform the user that they are already signed in with the authentication source" do
-            flash[:error].should_not be_nil
-            flash[:error].should == "You are already signed in using Facebook"
+          describe "not yet defined for the user" do
+            before do
+              @auth_hash = OmniAuth.config.mock_auth[:google]
+              request.env["omniauth.auth"] = @auth_hash
+
+              post :create, :provider => @auth_hash["provider"]
+            end
+
+            it "should assign a users variable" do
+              assigns(:users).should_not be_nil
+            end
+
+            it "should assign the session user id" do
+              session[:user_id].should_not be_nil
+            end
+
+            it "should assign the session authentication id" do
+              session[:authentication_id].should_not be_nil
+            end
+
+            it "should inform the user that the source was added to available sign-in mechanisms" do
+              flash[:notice].should == "Your Google account has been added as a sign-in mechanism"
+            end
+          end
+
+          describe "already defined for the user" do
+            before do
+              post :create, :provider => @auth_hash["provider"]
+            end
+
+            it "should assign a users variable" do
+              assigns(:users).should_not be_nil
+            end
+
+            it "should assign the session user id" do
+              session[:user_id].should_not be_nil
+            end
+
+            it "should assign the session authentication id" do
+              session[:authentication_id].should_not be_nil
+            end
+
+            it "should inform the user that they are already signed in with the authentication source" do
+              flash[:notice].should == "You are already signed in using Facebook"
+            end
           end
         end
       end
 
       describe "that is not signed in" do
+        before do
+          post :create, :provider => @auth_hash["provider"]
+        end
+
+        it "should assign a users variable" do
+          assigns(:users).should_not be_nil
+        end
+
+        it "should assign the session user id" do
+          session[:user_id].should_not be_nil
+        end
+
+        it "should assign the session authentication id" do
+          session[:authentication_id].should_not be_nil
+        end
+
         it "should display the home page" do
           response.should render_template("home/index")
         end
 
         it "should inform the user of successful sign in" do
-          flash[:notice].should_not be_nil
           flash[:notice].should == "Signed in successfully"
         end
       end
@@ -95,8 +160,12 @@ describe AuthenticationsController do
         post :create, :provider => @auth_hash["provider"]
       end
 
+      it "should assign the auth hash to the session variable" do
+        session[:auth_hash].should_not be_empty
+      end
+
       it "should allow the user to sign up" do
-        response.should render_template("users/new")
+        response.should render_template("authentications/new")
       end
     end
   end
