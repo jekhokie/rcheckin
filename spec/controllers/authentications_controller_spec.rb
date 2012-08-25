@@ -9,10 +9,6 @@ describe AuthenticationsController do
     it "should present the sign in page" do
       response.should render_template("authentications/new")
     end
-
-    it "should assign the authentication providers" do
-      assigns(:authentication_providers).should_not be_empty
-    end
   end
 
   describe "POST 'create'" do
