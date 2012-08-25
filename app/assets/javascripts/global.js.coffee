@@ -1,2 +1,2 @@
 $(".flash-box").livequery ->
-  $(this).delay(4000).fadeOut "fast"
+  $(this).delay(3000).fadeOut "fast"

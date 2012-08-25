@@ -1,5 +1,7 @@
 class AuthenticationsController < ApplicationController
   before_filter :authenticate_user!, :except => [ :create, :new ]
+  after_filter  :discard_flash
+
   protect_from_forgery :except => :create
 
   def new

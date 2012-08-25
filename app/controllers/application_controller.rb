@@ -3,9 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :prepare_for_mobile
 
-  helper_method :mobile_device?
-  helper_method :current_user
-  helper_method :user_signed_in?
+  helper_method :mobile_device?, :current_user, :user_signed_in?, :discard_flash
 
   private
 
@@ -42,5 +40,9 @@ class ApplicationController < ActionController::Base
       flash[:error] = "You need to sign in to view this page"
       redirect_to signin_path
     end
+  end
+
+  def discard_flash
+    flash.discard unless flash.blank?
   end
 end
