@@ -14,12 +14,16 @@ class AuthenticationsController < ApplicationController
 
       if params[:provider] == "facebook"
         @auth_hash[:provider] = (auth_response['provider']      ? auth_response['provider']      : '')
-        @auth_hash[:uid]      = (auth_response['uid']           ? auth_response['uid']           : '')
         @auth_hash[:email]    = (auth_response['info']['email'] ? auth_response['info']['email'] : '')
+        @auth_hash[:uid]      = (auth_response['uid']           ? auth_response['uid']           : '')
       elsif params[:provider] == "google"
         @auth_hash[:provider] = (auth_response['provider']      ? auth_response['provider']      : '')
-        @auth_hash[:uid]      = (auth_response['uid']           ? auth_response['uid']           : '')
         @auth_hash[:email]    = (auth_response['info']['email'] ? auth_response['info']['email'] : '')
+        @auth_hash[:uid]      = (auth_response['uid']           ? auth_response['uid']           : '')
+      elsif params[:provider] == "github"
+        @auth_hash[:provider] = (auth_response['provider']      ? auth_response['provider']      : '')
+        @auth_hash[:email]    = (auth_response['info']['email'] ? auth_response['info']['email'] : '')
+        @auth_hash[:uid]      = (auth_response['extra']['raw_info']['id'] ? auth_response['extra']['raw_info']['id'].to_s : '')
       end
 
       # successful authentication

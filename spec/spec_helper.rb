@@ -36,13 +36,25 @@ RSpec.configure do |config|
 
   OmniAuth.config.mock_auth[:facebook] = {
     "provider" => "facebook",
-    "uid"      => "1241241",
-    "info"     => { "email" => "test@example.com" }
+    "uid" => "1241241",
+    "info" => { "email" => "test@example.com" }
+  }
+
+  OmniAuth.config.mock_auth[:github] = {
+    "provider" => "github",
+    "info" => {
+      "email" => "test@example.com",
+    },
+    "extra" => {
+      "raw_info" => {
+        "id" => "1241513"
+      }
+    }
   }
 
   OmniAuth.config.mock_auth[:google] = {
     "provider" => "google",
-    "uid"      => "523525",
-    "info"     => { "email"  => "test@example.com" }
+    "uid" => "523525",
+    "info" => { "email"  => "test@example.com" }
   }
 end

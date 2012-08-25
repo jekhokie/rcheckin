@@ -78,7 +78,7 @@ describe AuthenticationsController do
         describe "for a known authentication source" do
           describe "not yet defined for the user" do
             before do
-              @auth_hash = OmniAuth.config.mock_auth[:google]
+              @auth_hash = OmniAuth.config.mock_auth[:github]
               request.env["omniauth.auth"] = @auth_hash
 
               post :create, :provider => @auth_hash["provider"]
@@ -97,7 +97,7 @@ describe AuthenticationsController do
             end
 
             it "should inform the user that the source was added to available sign-in mechanisms" do
-              flash[:notice].should == "Your Google account has been added as a sign-in mechanism"
+              flash[:notice].should == "Your Github account has been added as a sign-in mechanism"
             end
           end
 
