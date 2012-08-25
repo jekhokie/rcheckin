@@ -165,4 +165,34 @@ describe AuthenticationsController do
       end
     end
   end
+
+  describe "POST 'signout'" do
+    before do
+      authentication = FactoryGirl.create :authentication
+      session[:user_id] = authentication.user.id
+      session[:authentication_id] = authentication.id
+
+      post :signout
+    end
+
+    it "should destroy the session user id" do
+      session[:user_id].should be_nil
+    end
+
+    it "should destroy the session authentication id" do
+      session[:authentication_id].should be_nil
+    end
+
+    it "should destroy the session auth hash" do
+      session[:auth_hash].should be_nil
+    end
+
+    it "should display a flash message indicating successful sign out" do
+      flash[:notice].should == "Signed out successfully"
+    end
+
+    it "should render the home template" do
+      response.should render_template("home/index")
+    end
+  end
 end
