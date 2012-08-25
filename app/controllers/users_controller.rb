@@ -22,6 +22,12 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new :email => (session[:auth_hash][:email] ? session[:auth_hash][:email] : '')
+
+    respond_to do |format|
+      format.any(:js, :mobilejs)
+      format.mobile { render "new.mobilejs" }
+      format.html
+    end
   end
 
   def create
