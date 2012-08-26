@@ -12,16 +12,10 @@
         </tr>
       </thead>
       <tbody>
-        <% if user_signed_in? %>
-          <% @users.reject{ |user| user.id == current_user.id }.each do |user| %>
-            <tr id="<%= dom_id user %>">
-              <td><%= user.name  %></td>
-              <td class="state"><i class="icon-star state-star <%= state_star_class(user.state) %>"></i></td>
-            </tr>
-          <% end %>
-        <% else %>
-          <tr>
-            <td colspan="2">Sign in to view users.</td>
+        <% @users.reject{ |user| user.id == current_user.id }.each do |user| %>
+          <tr id="<%= dom_id user %>">
+            <td><%= user.name  %></td>
+            <td class="state"><i class="icon-star state-star <%= state_star_class(user.state) %>"></i></td>
           </tr>
         <% end %>
       </tbody>
