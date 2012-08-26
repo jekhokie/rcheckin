@@ -21,7 +21,7 @@ class AuthenticationsController < ApplicationController
         @auth_hash[:provider] = (auth_response['provider']      ? auth_response['provider']      : '')
         @auth_hash[:email]    = (auth_response['info']['email'] ? auth_response['info']['email'] : '')
         @auth_hash[:uid]      = (auth_response['uid']           ? auth_response['uid']           : '')
-      elsif params[:provider] == "google"
+      elsif ["google", "twitter"].include? params[:provider]
         @auth_hash[:provider] = (auth_response['provider']      ? auth_response['provider']      : '')
         @auth_hash[:email]    = (auth_response['info']['email'] ? auth_response['info']['email'] : '')
         @auth_hash[:uid]      = (auth_response['uid']           ? auth_response['uid']           : '')

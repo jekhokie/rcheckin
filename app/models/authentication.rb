@@ -7,7 +7,7 @@ class Authentication < ActiveRecord::Base
   validates :provider, :presence => true, :uniqueness => { :scope => :user_id  }
   validates :user,     :presence => true
 
-  @@providers = [ "facebook", "github" ]
+  @@providers = [ "facebook", "github", "twitter" ]
 
   def self.providers
     @@providers
